@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.realdolmen.scrumex</groupId>
-    <artifactId>Scrum Ex</artifactId>
+    <artifactId>ScrumEx</artifactId>
     <version>10.3.5</version>
 
 	<dependencies>
