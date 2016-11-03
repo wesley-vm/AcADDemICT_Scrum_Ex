@@ -3,6 +3,7 @@ package com.realdolmen.scrumex.repository;
 import com.realdolmen.scrumex.domain.Question;
 import com.realdolmen.scrumex.services.QuestionsRepositoryInterface;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import java.util.*;
 
@@ -13,10 +14,15 @@ import java.util.*;
 public class QuestionRepository implements QuestionsRepositoryInterface{
 
     private Map<String, Integer> dummyAnswers;
-    public QuestionRepository(){
+
+    @PostConstruct
+    public void init(){
         dummyAnswers = new HashMap<String, Integer>();
         dummyAnswers.put("Yes", 1);
         dummyAnswers.put("No", 2);
+    }
+
+    public QuestionRepository(){
     }
     @Override
     public List<Question> getAllQuestions() {
