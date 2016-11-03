@@ -1,5 +1,6 @@
 package com.realdolmen.scrumex.repository;
 
+import com.realdolmen.scrumex.domain.Answer;
 import com.realdolmen.scrumex.domain.Question;
 import com.realdolmen.scrumex.services.QuestionsRepositoryInterface;
 
@@ -13,13 +14,12 @@ import java.util.*;
 @Stateless
 public class QuestionRepository implements QuestionsRepositoryInterface{
 
-    private Map<String, Integer> dummyAnswers;
+    private Answer dummyAnswer1, dummyAnswer2;
 
     @PostConstruct
     public void init(){
-        dummyAnswers = new HashMap<String, Integer>();
-        dummyAnswers.put("Yes", 1);
-        dummyAnswers.put("No", 2);
+        dummyAnswer1 = new Answer("yes", 10);
+        dummyAnswer2 = new Answer("no", 10);
     }
 
     public QuestionRepository(){
@@ -27,17 +27,17 @@ public class QuestionRepository implements QuestionsRepositoryInterface{
     @Override
     public List<Question> getAllQuestions() {
         return new ArrayList<>(Arrays.asList(new Question[]{
-                new Question("How long is a chinese name?", dummyAnswers),
-                new Question("Hitler did nothing wrong.", dummyAnswers),
-                new Question("Do you like women?", dummyAnswers),
-                new Question("Do you like pancakes?", dummyAnswers),
-                new Question("Do you like waffles?", dummyAnswers),
-                new Question("Do you like Fake hair?", dummyAnswers),
-                new Question("Do you like Oranges?", dummyAnswers),
-                new Question("Do you like Mexicans?", dummyAnswers),
-                new Question("Do you like walls?", dummyAnswers),
-                new Question("Do you like Bill Clinton?", dummyAnswers),
-                new Question("Do you like Emails?", dummyAnswers)
+                new Question("How long is a chinese name?", dummyAnswer1, dummyAnswer2),
+                new Question("Hitler did nothing wrong.", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like women?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like pancakes?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like waffles?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like Fake hair?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like Oranges?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like Mexicans?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like walls?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like Bill Clinton?", dummyAnswer1, dummyAnswer2),
+                new Question("Do you like Emails?", dummyAnswer1, dummyAnswer2)
         }));
     }
 }

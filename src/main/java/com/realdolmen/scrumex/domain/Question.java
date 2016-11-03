@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,14 +21,14 @@ public class Question {
 
     private String Question;
 
-    private Map<String, Integer> Answers;
+    private List<Answer> answers;
 
     protected Question() {
     }
 
-    public Question(String question, Map<String, Integer> answers) {
+    public Question(String question, Answer... answers) {
         Question = question;
-        Answers = answers;
+        this.answers = Arrays.asList(answers);
     }
 
     public int getId() {
@@ -41,11 +43,8 @@ public class Question {
         Question = question;
     }
 
-    public Map<String, Integer> getAnswers() {
-        return Answers;
+    public List<Answer> getAnswers() {
+        return answers;
     }
 
-    public void setAnswers(Map<String, Integer> answers) {
-        Answers = answers;
-    }
 }
