@@ -10,7 +10,11 @@ public class Candidate {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
+	
 	private String name;
+	
+	
 	private Integer score;
 	
 	public Integer getId() {
@@ -33,8 +37,9 @@ public class Candidate {
 		return score;
 	}
 	
-	public void setScore(Integer score) {
-		this.score = score;
+	public void addToScore()
+	{
+		this.score=this.score+1;
 	}
 	
 
